@@ -1,0 +1,84 @@
+{% extends "base.html"  %}
+<!-- 继承title块 -->
+{% block title %}
+客户信息新增
+{% end %}
+
+{% block body %}
+<div style="margin-bottom:20px">
+    <input class="easyui-textbox" label="Email:" labelPosition="left" data-options="prompt:'Enter a email address...',validType:'email'" style="width:30%;height:52px">
+</div>
+<div style="margin-bottom:20px">
+    <input class="easyui-textbox" label="First Name:" labelPosition="left" style="width:30%;height:52px">
+</div>
+<div style="margin-bottom:20px">
+    <input class="easyui-textbox" label="Last Name:" labelPosition="left" style="width:30%;height:52px">
+</div>
+<div style="margin-bottom:20px">
+    <input class="easyui-textbox" label="Company:" labelPosition="left" style="width:30%;height:52px">
+</div>
+
+<div>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-ok" style="width:30%;height:32px">Register</a>
+</div>
+{% end %}
+
+<!--<link rel="stylesheet" type="text/css" href="{{static_url('css/form.css')}}" />-->
+<!--
+<div class="main">
+    <div class="lable">
+        <input type="text" class="text" onfocus="this.value='';" value="姓名" onblur="if (this.value=='') {this.value='姓名';}" id="name">
+        <input type="text" class="text" onfocus="this.value='';" value="证件类型" onblur="if (this.value=='') {this.value='证件类型';}" id="certificate_type">
+        <input type="text" class="text" onfocus="this.value='';" value="证件号码" onblur="if (this.value=='') {this.value='证件号码';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="性别" onblur="if (this.value=='') {this.value='性别';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="证件签发日期" onblur="if (this.value=='') {this.value='证件签发日期';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="证件到期日期" onblur="if (this.value=='') {this.value='证件到期日期';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="国籍" onblur="if (this.value=='') {this.value='国籍';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="出生日期" onblur="if (this.value=='') {this.value='出生日期';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="最高学历" onblur="if (this.value=='') {this.value='最高学历';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="最高学位" onblur="if (this.value=='') {this.value='最高学位';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="住宅电话" onblur="if (this.value=='') {this.value='住宅电话';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="手机号码" onblur="if (this.value=='') {this.value='手机号码';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="单位电话" onblur="if (this.value=='') {this.value='单位电话';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="电子邮箱" onblur="if (this.value=='') {this.value='电子邮箱';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="通讯地址" onblur="if (this.value=='') {this.value='通讯地址';}" id="certificate_number">
+
+        <input type="text" class="text" onfocus="this.value='';" value="姓名" onblur="if (this.value=='') {this.value='姓名';}" id="name">
+        <input type="text" class="text" onfocus="this.value='';" value="证件类型" onblur="if (this.value=='') {this.value='证件类型';}" id="certificate_type">
+        <input type="text" class="text" onfocus="this.value='';" value="证件号码" onblur="if (this.value=='') {this.value='证件号码';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="性别" onblur="if (this.value=='') {this.value='性别';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="证件签发日期" onblur="if (this.value=='') {this.value='证件签发日期';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="证件到期日期" onblur="if (this.value=='') {this.value='证件到期日期';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="国籍" onblur="if (this.value=='') {this.value='国籍';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="出生日期" onblur="if (this.value=='') {this.value='出生日期';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="最高学历" onblur="if (this.value=='') {this.value='最高学历';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="最高学位" onblur="if (this.value=='') {this.value='最高学位';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="住宅电话" onblur="if (this.value=='') {this.value='住宅电话';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="手机号码" onblur="if (this.value=='') {this.value='手机号码';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="单位电话" onblur="if (this.value=='') {this.value='单位电话';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="电子邮箱" onblur="if (this.value=='') {this.value='电子邮箱';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="通讯地址" onblur="if (this.value=='') {this.value='通讯地址';}" id="certificate_number">
+ 
+
+        <input type="text" class="text" onfocus="this.value='';" value="姓名" onblur="if (this.value=='') {this.value='姓名';}" id="name">
+        <input type="text" class="text" onfocus="this.value='';" value="证件类型" onblur="if (this.value=='') {this.value='证件类型';}" id="certificate_type">
+        <input type="text" class="text" onfocus="this.value='';" value="证件号码" onblur="if (this.value=='') {this.value='证件号码';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="性别" onblur="if (this.value=='') {this.value='性别';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="证件签发日期" onblur="if (this.value=='') {this.value='证件签发日期';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="证件到期日期" onblur="if (this.value=='') {this.value='证件到期日期';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="国籍" onblur="if (this.value=='') {this.value='国籍';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="出生日期" onblur="if (this.value=='') {this.value='出生日期';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="最高学历" onblur="if (this.value=='') {this.value='最高学历';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="最高学位" onblur="if (this.value=='') {this.value='最高学位';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="住宅电话" onblur="if (this.value=='') {this.value='住宅电话';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="手机号码" onblur="if (this.value=='') {this.value='手机号码';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="单位电话" onblur="if (this.value=='') {this.value='单位电话';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="电子邮箱" onblur="if (this.value=='') {this.value='电子邮箱';}" id="certificate_number">
+        <input type="text" class="text" onfocus="this.value='';" value="通讯地址" onblur="if (this.value=='') {this.value='通讯地址';}" id="certificate_number">
+ 
+        <div class="submit">
+            <input type="submit" onclick="myFunction()" value="提交" >
+        </div>
+    </div>
+</div>
+-->

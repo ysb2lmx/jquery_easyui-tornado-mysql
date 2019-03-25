@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+<!-- 继承title块 -->
+{% block title %}
+{{title}}
+{% end %}
+
+{% block body %}
+
+    <body class="easyui-layout">
+        <!--布局：北-->
+        <div data-options="region:'north'" style="height: 5%;background-image: url(./static/img/layout-browser-hd-bg.gif);">
+            <!--添加网站Logo-->
+            <span id="n_logo" style="margin-left: 20px;">
+                <img src="{{static_url('img/blocks.gif')}}" width="35px" style="margin-top: 5px;"/>
+                <font color="white" size="4px">{{sys_name}}</font>
+            </span>
+            <span id="n_title" style="float: right;">
+                欢迎<span id="username" value="admin"></span>登录&nbsp;&nbsp;&nbsp;
+                <a id="n_title_pwd" href="javascript:void(0)">修改密码</a>|
+                <a id="n_title_out" href="javascript:void(0)">退出</a>
+            </span>
+        </div>
+
+        <!--布局：南-->
+        <div id="sdiv" data-options="region:'south',border:false" style="height:4%;">
+            &copy;2008-2018 杨少博的个人资产管理系统
+        </div>
+
+        <!--  页面左边区域    -->
+        <div data-options="region:'west',title:'系统菜单',split:true" style="width: 200px;">
+            <div id="menu_tree" class="easyui-accordion" data-options="fit:true,border:false,animate:true,selected:false">
+                <div id="customer_tree" title="客户信息" >
+                </div>
+                <div id="asset_tree" title="资金信息">
+                </div>
+                <div id="system_tree" title="系统信息">
+                </div>
+            </div>
+        </div>
+
+        <!--布局：中间-->
+        <div data-options="region:'center'">
+            <!--选项卡使用-->
+            <div id="div_tabs" class="easyui-tabs" data-options="fit:true,border:false">
+                <!--首页-->
+                <!--<div id="" title="首页" style="background-image:url(./static/img/body.jpg) ;background-size: cover;">-->
+                <div title="首页" style="background-size: cover;">
+                    <h1>该地方需要默认回显当前的系统登陆信息等</h1>
+                </div>
+            </div>
+        </div>
+
+        <!--创建修改密码窗口-->
+        <div id="div_pwd" class="easyui-window" title="修改密码" style="width: 400px;height: 250px;" data-options="collapsible:false,minimizable:false,maximizable:false,closed:true,modal:true">
+            <table>
+                <tr>
+                    <td>原有密码:</td>
+                    <td> <input type="password" /> </td>
+                </tr>
+                <tr>
+                    <td>新密码:</td>
+                    <td> <input type="password" /> </td>
+                </tr>
+                <tr>
+                    <td>确认密码:</td>
+                    <td> <input type="password" /> </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a id="btnCon" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">确认修改</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a id="btnCan" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">取消</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!--引入index文件-->
+        <script src="{{static_url('js/index.js')}}" type="text/javascript" charset="utf-8"></script>
+
+    </body>
+{% end %}

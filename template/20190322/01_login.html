@@ -1,0 +1,101 @@
+<html>
+
+	<head>
+		<title>登录</title>
+		<meta charset="UTF-8" />
+		<!--
+			EasyUI使用:
+				1 将EasyUI提供的js文件和主题（themes）样式存放到项目的指定位置
+				2 在Html文档中引入EasyUI的插件
+				3在HTML文档标签上遵循EasyUI的文档规则使用EasyUI完成页面的开发
+				
+			面板使用(panel)：
+				创建面板：
+					在创建一个div标签，并class属性值为："easyui-panel"
+				面板属性:
+					title:添加面板标题
+					data-options：给面板添加常用的操作。具体参照API	
+					添加按钮
+				信息提示
+			注意：
+				EasyUI的使用
+					通过标签的class属性添加基本EasyUI功能，包括样式和jQuery操作
+					data-options属性对标签的基本功能进行修改操作
+		-->
+		<!--引入主题样式-->
+		<link rel="stylesheet" type="text/css" href="themes/default/easyui.css" />
+		<!--引入图标样式-->
+		<link rel="stylesheet" type="text/css" href="themes/icon.css" />
+		<!--引入jQuery文件-->
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--引入EasyUi的js文件-->
+		<script src="js/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--声明css代码域-->
+		<style type="text/css">
+			table{
+				margin: auto;
+				margin-top: 20px;
+			}
+			tr{
+				height: 40px;
+				text-align: center;
+			}
+		</style>
+		<!--声明js代码域-->
+		<script type="text/javascript">
+			/*校验登录信息*/
+				$(function(){
+					
+					//登录校验
+					$("#btnCon").click(function(){
+						//校验用户信息
+						if($(":text").val()==""){
+							//使用EasyUI的信息框进行提示
+							$.messager.alert('登录提示',"用户名不能为空！","warning");
+						}else if($(":password").val()==""){
+							//使用EasyUI的信息框进行提示
+							$.messager.alert('登录提示',"密码不能为空！","warning");
+						}else{
+							$("form").submit();
+						}
+					})
+					//重置
+					$("#btnCan").click(function(){
+						$("form").get(0).reset();
+					})
+				})
+		</script>
+	</head>
+
+	<body>
+		<div id="panel_login" style="margin: auto;width: 500px;margin-top: 100px;">
+			<!--创建登录面板-->
+			<div id="login" class="easyui-panel" title="登录" data-options="iconCls:'icon-mlogin',minimizable:true,maximizable:true
+				,collapsible:true,closable:true" style="width: 500px;height: 200px;">
+				<form action="02_main.html" method="get">
+					<table>
+						<tr>
+							<td>用户名:</td>
+							<td>
+								<input type="text" name="uname"/>
+							</td>
+						</tr>
+						<tr>
+							<td>密&nbsp;&nbsp;&nbsp;码:</td>
+							<td>
+								<input type="password" name="pwd" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<a id="btnCon" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">登录</a>&nbsp; &nbsp;&nbsp;
+								<a id="btnCan" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">重置</a>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>

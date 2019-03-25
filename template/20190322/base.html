@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>{% block title %}主页面{% end %}</title>
+        <meta charset="UTF-8" />
+        <!--引入主题样式-->
+        <link rel="stylesheet" type="text/css" href="{{static_url('themes/bootstrap/easyui.css')}}" />
+        <!--引入图标样式-->
+        <link rel="stylesheet" type="text/css" href="{{static_url('themes/icon.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{static_url('css/demo.css')}}" />
+        <!--引入jQuery文件-->
+        <script src="{{static_url('js/jquery.min.js')}}" type="text/javascript" charset="utf-8"></script>
+        <!--引入EasyUi的js文件-->
+        <script src="{{static_url('js/jquery.easyui.min.js')}}" type="text/javascript" charset="utf-8"></script>
+        <!--
+            主页面:
+                1 引入EasyUI插件
+                2 使用body布局方式
+                3 将布局后的每块区域完成内容填充
+        -->
+        <!--引入主页面布局样式-->
+        <link rel="stylesheet" type="text/css" href="{{static_url('css/index.css')}}" />
+        <!--声明js代码域-->
+    </head>
+    <body>
+        <!--body渲染继承-->
+        {% block body %}
+        {% end %}
+    </body>
+</html>

@@ -1,0 +1,35 @@
+#sdiv {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 30px;
+    background-color: gray;
+}
+/*修改头部标题样式*/
+
+#n_title {
+    color: white;
+    font-size: 14px;
+    line-height: 40px;
+}
+/*修改标题超链接样式*/
+
+#n_title a {
+    text-decoration: none;
+    color: white;
+}
+
+#n_title a:hover {
+    color: orange;
+}
+/*修改密码样式*/
+
+#div_pwd table {
+    margin: auto;
+    margin-top: 10px;
+}
+
+#div_pwd table tr {
+    height: 40px;
+    text-align: center;
+}
